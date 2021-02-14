@@ -1,70 +1,35 @@
-###################
-What is CodeIgniter
-###################
+# UnlimitedSubcategoriesOfCategory
+A full CodeIgniter solution to generate and list all categories , sub categories and sub sub categories
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+## Included features
+- As less database calls as possible
+- As generic as possible (using a recursive function)
+- As clean as possible
 
-*******************
-Release Information
-*******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+## Tools To build This Solution:
+- CodeIgniter knowledge.
+- PHP knowledge
+- MySQL knowledge
+- Html , Css , Js , Ajax knowledge
+- Version Control (Git) Knowladge 
 
-**************************
-Changelog and New Features
-**************************
+**For More Details please visit this link :**
+	- [Adding an existing project to GitHub using the command line](https://docs.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+### Step 1: creating the table in MySQL.
+Our table (named 'menus') will have only 4 fields...
 
-*******************
-Server Requirements
-*******************
+- id (int) : Unique ID integer
+- parent_id (int) : refers to the parent node id
+- name (varchar) : the name of our menu
+- sequence (int) : will determine the 'order' in which the subCategory-items will be shown (per level)
 
-PHP version 5.6 or newer is recommended.
+**Hint**: By using the sequence field, we can make to category-levels independent from the ID's in our table.
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
 
-************
-Installation
-************
+### Step 2: Once the above step is done, you can simply run this small demo by:
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+**http://yourserver/yourappname/index/menus**
 
-*******
-License
-*******
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
